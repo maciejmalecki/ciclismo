@@ -1,8 +1,49 @@
 version: 2.1
-orbs:
-  gradle: circleci/gradle@2.2.0
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:15-jdk-buster
+
+    working_directory: ~/repo
+
+    environment:
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle.kts" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: ./gradlew dependencies
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle.kts" }}
+
+      # run tests!
+      - run: ./gradlew asciidoctor build
+
+      - deploy:
+          name: Deploy Release to GitHub
+          command: |
+            if [ $CIRCLE_BRANCH == 'main' ]; then
+              bash .circleci/publish.sh
+            fi
+
 workflows:
-  documentation:
+  version: 2
+  build-and-deploy:
     jobs:
-      - gradle/run:
-          command: asciidoctor build
+      - build:
+          filters:
+            branches:
+              only:
+                - main
+                - develop
