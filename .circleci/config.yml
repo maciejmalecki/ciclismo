@@ -11,6 +11,8 @@ jobs:
       TERM: dumb
 
     steps:
+      - run: sudo apt install graphviz
+
       - checkout
 
       # Download and cache dependencies
