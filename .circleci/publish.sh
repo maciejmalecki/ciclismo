@@ -13,7 +13,7 @@ ls -al
 
 #mv adoc/img out-adoc
 find . -maxdepth 1 ! -name 'doc' ! -name '.git' ! -name '.gitignore' ! -name '.circleci' -exec rm -rf {} \;
-mv doc/build/doc/asciidoc/* .
+mv doc/build/docs/asciidoc/* .
 rm -R doc/
 
 ls -al
