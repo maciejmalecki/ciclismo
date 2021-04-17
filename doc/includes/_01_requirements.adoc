@@ -1,0 +1,30 @@
+= Requirements
+
+== Actors
+
+Cycler:: A trainee.
+Trainer:: A trainer.
+
+== User stories
+
+[plantuml, actors, png]
+....
+(Training plan selection) as UC01
+(Upload training data) as UC02
+(Create training plan) as UC11
+:Cycler: --> UC01
+:Cycler: --> UC02
+:Trainer: --> UC11
+....
+
+=== Training plan selection
+
+I would like to select one of the available training plans. The plan becomes immediately effective.
+
+=== Upload training data
+
+I would like to upload training data gathered by my device so that it can be automatically matched with my training plan, analyzed and evaluated.
+
+=== Create training plan
+
+I would like to create a new training plan for given discipline, skill level and volume.
