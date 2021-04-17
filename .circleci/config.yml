@@ -11,8 +11,6 @@ jobs:
       TERM: dumb
 
     steps:
-      - run: sudo apt install graphviz
-
       - checkout
 
       # Download and cache dependencies
@@ -30,7 +28,16 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle.kts" }}
 
       # run tests!
-      - run: ./gradlew asciidoctor build
+      - run: ./gradlew build
+
+  build-adoc:
+    docker:
+      - image: circleci/jruby:latest
+    working_directory: ~/repo
+    steps:
+      - run: sudo apt install graphviz
+      - checkout
+      - run: ./gradlew asciidoctor
 
       - deploy:
           name: Deploy Release to GitHub
@@ -38,11 +45,15 @@ jobs:
             if [ $CIRCLE_BRANCH == 'main' ]; then
               bash .circleci/publish.sh
             fi
-
 workflows:
   version: 2
   build-and-deploy:
     jobs:
+      - build-adoc:
+          filters:
+            branches:
+              only:
+                - main
       - build:
           filters:
             branches:
