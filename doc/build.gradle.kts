@@ -5,6 +5,7 @@ plugins {
 tasks {
     "asciidoctor"(org.asciidoctor.gradle.jvm.AsciidoctorTask::class) {
         sourceDir("src")
+        baseDirFollowsSourceFile()
     }
 }
 
