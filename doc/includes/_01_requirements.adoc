@@ -17,10 +17,13 @@ left to right direction
 (Display training plan) as UC02
 (Upload training data) as UC03
 (Display training) as UC04
+(Withdraw plan) as UC05
 (Create training plan) as UC11
 :Cyclist: --> UC01
 :Cyclist: --> UC02
 :Cyclist: --> UC03
+:Cyclist: --> UC04
+:Cyclist: --> UC05
 UC03 .> UC04 : extends
 Trainer --> UC11
 ....
@@ -28,7 +31,10 @@ Trainer --> UC11
 === Training plan selection
 
 I would like to select one of the available training plans.
+
 The plan becomes immediately effective.
+The plan stays selected until its last day, or the cyclist select <<Withdraw plan>> use case.
+Once last day of the training plan passes, the plan is automatically deselected.
 
 === Display training plan
 
@@ -59,6 +65,10 @@ Once uploaded, the file will be automatically processed.
 The content of the file is analyzed and compared with training model.
 The system then evaluates and assigns a score for the training.
 The score is shown to the user in <<Display training>> use case.
+
+=== Withdraw plan
+
+I would like to stop execution of the plan, that has been previously selected.
 
 === Create training plan
 
