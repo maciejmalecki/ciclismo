@@ -9,23 +9,56 @@ Plan Owner:: A person who creates training plans. Training plans can be created 
 
 [plantuml, actors, png]
 ....
+skinparam handwritten true
+left to right direction
 :Cyclist:
 :Plan Owner: as Trainer
 (Training plan selection) as UC01
-(Upload training data) as UC02
+(Display training plan) as UC02
+(Upload training data) as UC03
+(Display training) as UC04
 (Create training plan) as UC11
 :Cyclist: --> UC01
 :Cyclist: --> UC02
+:Cyclist: --> UC03
+UC03 .> UC04 : extends
 Trainer --> UC11
 ....
 
 === Training plan selection
 
-I would like to select one of the available training plans. The plan becomes immediately effective.
+I would like to select one of the available training plans.
+The plan becomes immediately effective.
+
+=== Display training plan
+
+I would like to see the training plan that is currently selected by me.
+
+I would like to see all trainings in the plan categorized into past, current and future trainings.
+
+=== Display training
+
+I would like to see the selected training.
+
+The most important information regarding the training is its construction, i.e.:
+
+* overall length,
+* some additional characteristics such as intensity, difficulty, description,
+* specification of all training compounds: intervals, RBIs including length and requirements (expected power, HR, cadence, etc).
+
+It should be possible to specify whether given training has been taken.
+It should be also possible to upload training data (see <<Upload training data>> use case).
+If the _evaluation_ of the taken training is available, it should be shown here as well.
 
 === Upload training data
 
 I would like to upload training data gathered by my device so that it can be automatically matched with my training plan, analyzed and evaluated.
+
+It should be possible to upload the files in following formats: `fit`, `tcx`, `gpx`.
+Once uploaded, the file will be automatically processed.
+The content of the file is analyzed and compared with training model.
+The system then evaluates and assigns a score for the training.
+The score is shown to the user in <<Display training>> use case.
 
 === Create training plan
 
