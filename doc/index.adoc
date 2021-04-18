@@ -4,6 +4,7 @@ Maciej Małecki <malecki.maciej@gmail.com>
 :toc: left
 :icons: font
 :sectnums:
+:stylesheet: ubuntu.css
 
 Manage your cycling training plans, perform, evaluate and adjust in near-realtime.
 
