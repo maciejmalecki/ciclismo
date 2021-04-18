@@ -5,6 +5,6 @@ Maciej Małecki <malecki.maciej@gmail.com>
 :icons: font
 :sectnums:
 
-Content entered directly below the header but before the first section heading is called the preamble.
+Manage your cycling training plans, perform, evaluate and adjust in near-realtime.
 
 include::includes/_01_requirements.adoc[leveloffset=+1]

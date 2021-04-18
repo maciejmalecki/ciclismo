@@ -2,19 +2,21 @@
 
 == Actors
 
-Cycler:: A trainee.
-Trainer:: A trainer.
+Cyclist:: A happy person that likes to sweat.
+Plan Owner:: A person who creates training plans. Training plans can be created for private use or can be published for other cyclists' usage.
 
 == User stories
 
 [plantuml, actors, png]
 ....
+:Cyclist:
+:Plan Owner: as Trainer
 (Training plan selection) as UC01
 (Upload training data) as UC02
 (Create training plan) as UC11
-:Cycler: --> UC01
-:Cycler: --> UC02
-:Trainer: --> UC11
+:Cyclist: --> UC01
+:Cyclist: --> UC02
+Trainer --> UC11
 ....
 
 === Training plan selection
