@@ -94,7 +94,8 @@ Usually the training consist of following phases:
 
 We consider now only interval trainings, for such the _Workout_ is set of _intervals_, each, in the simplest case, consisting of _Work phase_ and _Rest phase_.
 
-.Example workout
+[#example-example-workout]
+.Simple workout example
 ====
 5x6 min MT, 3 min RBI
 
@@ -103,6 +104,20 @@ The workout consists of 5 _intervals_: 6 minutes of work and 3 minutes of rest e
 Muscle Tension (MT):: A prolonged interval with higher resistance and lower cadence.
 RBI:: Rest between intervals.
 ====
+
+Let's take a look at <<example-example-workout>>: this is a very simple workout, and a very simple interval scheme.
+Each piece of work is identical which says: use higher resistance on your home trainer and keep cadence low (let's say 75 -- 85 rpm).
+For rest it will probably make sense just to reduce resistance.
+
+[#example-complex-workout]
+.Complex workout example
+====
+4x8 min OU, 4 min RBI: 3 min at Tempo HR & Power / 1 min at Steady State HR & Power / 3 min at Tempo HR & Power / 1 min at Steady State HR & Power
+====
+
+At <<example-complex-workout>> we see a training with more complex layout.
+The workout consists of 4 _intervals_ of 8 minutes, but each interval consists of two sub intervals: 3 minutes of higher intensity, 1 minute of slightly lower intensity. Then there are 4 minutes of rest.
+
 
 === Create training plan
 
