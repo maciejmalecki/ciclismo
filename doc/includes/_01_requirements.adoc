@@ -107,11 +107,6 @@ We consider now only interval trainings, for such the _Workout_ is set of _inter
 .Simple workout example
 ====
 5x6 min MT, 3 min RBI
-
-The workout consists of 5 _intervals_: 6 minutes of work and 3 minutes of rest each.
-
-Muscle Tension (MT):: A prolonged interval with higher resistance and lower cadence.
-RBI:: Rest between intervals.
 ====
 
 Let's take a look at <<example-example-workout>>: this is a very simple workout, and a very simple interval scheme.
@@ -121,7 +116,12 @@ For rest it will probably make sense just to reduce resistance.
 [#example-complex-workout]
 .Complex workout example
 ====
-4x8 min OU, 4 min RBI: 3 min at Tempo HR & Power / 1 min at Steady State HR & Power / 3 min at Tempo HR & Power / 1 min at Steady State HR & Power
+4x8 min OU, 4 min RBI:
+
+* 3 min at Tempo HR & Power
+* 1 min at Steady State HR & Power
+* 3 min at Tempo HR & Power
+* 1 min at Steady State HR & Power
 ====
 
 At <<example-complex-workout>> we see a training with more complex layout.
