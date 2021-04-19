@@ -10,7 +10,7 @@ Plan Owner:: A person who creates training plans. Training plans can be created 
 [plantuml, actors, png]
 ....
 skinparam handwritten true
-top to bottom direction
+left to right direction
 :Cyclist:
 :Plan Owner: as Trainer
 (Training plan selection) as UC01
@@ -18,15 +18,18 @@ top to bottom direction
 (Upload training data) as UC03
 (Display training) as UC04
 (Withdraw plan) as UC05
+(Evaluate training) as UC06
 (Create indoor training) as UC12
 (Create training plan) as UC11
 
-:Cyclist: --> UC01
-:Cyclist: -left-> UC02
-:Cyclist: -> UC03
-:Cyclist: -up-> UC04
-:Cyclist: --> UC05
+:Cyclist: -up-> UC01
+:Cyclist: -up-> UC02
+:Cyclist: --> UC03
+:Cyclist: -> UC04
+:Cyclist: -up-> UC05
+:Cyclist: -> UC06
 UC03 .> UC04 : extends
+UC04 .> UC06: extends
 Trainer --> UC11
 Trainer --> UC12
 ....
