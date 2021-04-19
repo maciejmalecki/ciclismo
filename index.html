@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="author" content="Maciej Małecki">
+<title>Ciclismo</title>
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+
+@import url(//fonts.googleapis.com/css?family=Ubuntu);
+@import url(//asciidoctor.org/stylesheets/asciidoctor.css); /* Default asciidoc style framework - important */
+
+/* CUSTOMISATIONS */
+/* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
+
+:root{
+--maincolor:#FFFFFF;
+--primarycolor:#E95420;
+--secondarycolor:#333333;
+--tertiarycolor: #772953;
+--sidebarbackground:#CCC;
+--linkcolor:#b71c1c;
+--linkcoloralternate:#f44336;
+--white:#FFFFFF;
+--black:#000000;
+}
+
+/* Text styles */
+body{font-family: "Ubuntu",sans-serif;}
+
+h1,h2{color:var(--primarycolor) !important;font-family:"Ubuntu",sans-serif;}
+h3,h4,h5,h6{color:var(--secondarycolor);font-family: "Ubuntu",sans-serif;}
+.title{color:(--primarycolor) !important;font-family:"Ubuntu",sans-serif;font-style: normal; font-weight: normal;}
+p{font-family: "Ubuntu",sans-serif ! important}
+#toc.toc2 a:link{color:white;}
+code{background-color: var(--secondarycolor) !important;color:var(--white)}
+
+
+/* Table styles */
+th{background-color: var(--tertiarycolor);color:var(--white) !important;}
+
+#toc.toc2{background-color:#2C001E;color:white;}
+#toc.toc2.a{color:white;}
+#toctitle{color:#E95420;}
+
+/* Responsiveness fixes */
+video {
+  max-width: 100%;
+}
+
+@media all and (max-width: 600px) {
+table {
+  width: 55vw!important;
+  font-size: 3vw;
+}
+
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>Ciclismo</h1>
+<div class="details">
+<span id="author" class="author">Maciej Małecki</span><br>
+<span id="email" class="email"><a href="mailto:malecki.maciej@gmail.com">malecki.maciej@gmail.com</a></span><br>
+<span id="revnumber">version 1.0.0-SNAPSHOT,</span>
+<span id="revdate">Apr 17, 2021</span>
+<br><span id="revremark">Ciclismo</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_requirements">1. Requirements</a>
+<ul class="sectlevel2">
+<li><a href="#_actors">1.1. Actors</a></li>
+<li><a href="#_user_stories">1.2. User stories</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Manage your cycling training plans, perform, evaluate and adjust in near-realtime.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ciclismo.jpeg" alt="ciclismo">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_requirements">1. Requirements</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_actors">1.1. Actors</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Cyclist</dt>
+<dd>
+<p>A happy person that likes to sweat.</p>
+</dd>
+<dt class="hdlist1">Plan Owner</dt>
+<dd>
+<p>A person who creates training plans. Training plans can be created for private use or can be published for other cyclists' usage.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_stories">1.2. User stories</h3>
+<div class="imageblock">
+<div class="content">
+<img src="actors.png" alt="actors" width="658" height="321">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_training_plan_selection">1.2.1. Training plan selection</h4>
+<div class="paragraph">
+<p>I would like to select one of the available training plans.</p>
+</div>
+<div class="paragraph">
+<p>The plan becomes immediately effective.
+The plan stays selected until its last day, or until the cyclist selects <a href="#_withdraw_plan">Withdraw plan</a> use case.
+Once last day of the training plan passes, the plan is automatically deselected.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_display_training_plan">1.2.2. Display training plan</h4>
+<div class="paragraph">
+<p>I would like to see the training plan that is currently selected by me.</p>
+</div>
+<div class="paragraph">
+<p>The plan view should present all trainings categorized into past, current and future trainings.
+It should be possible to download a printable form of the plan (poster).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_display_training">1.2.3. Display training</h4>
+<div class="paragraph">
+<p>I would like to see the selected training.</p>
+</div>
+<div class="paragraph">
+<p>The most important information regarding the training is its construction, i.e.:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>overall length,</p>
+</li>
+<li>
+<p>some additional characteristics such as intensity, difficulty, description,</p>
+</li>
+<li>
+<p>specification of all training compounds:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>intervals,</p>
+</li>
+<li>
+<p>RBIs,</p>
+</li>
+<li>
+<p>duration of each phase,</p>
+</li>
+<li>
+<p>additional requirements regarding each phase (such as expected power, HR, cadence, etc).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It should be possible to specify whether given training has been taken.
+It should be also possible to upload training data (see <a href="#_upload_training_data">Upload training data</a> use case).
+If the <em>evaluation</em> of the taken training is available, it should be shown here as well.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_upload_training_data">1.2.4. Upload training data</h4>
+<div class="paragraph">
+<p>I would like to upload training data gathered by my device so that it can be automatically matched with my training plan, analyzed and evaluated.</p>
+</div>
+<div class="paragraph">
+<p>It should be possible to upload the files in following formats: <code>fit</code>, <code>tcx</code>, <code>gpx</code>.
+Once uploaded, the file will be automatically processed.
+The content of the file is analyzed and compared with training model.
+The system then evaluates and assigns a score for the training.
+The score is shown to the user in <a href="#_display_training">Display training</a> use case.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_withdraw_plan">1.2.5. Withdraw plan</h4>
+<div class="paragraph">
+<p>I would like to stop execution of the plan, that has been previously selected.</p>
+</div>
+<div class="paragraph">
+<p>A withdrawn plan can be resumed unless another training plan has been started.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_create_indoor_training">1.2.6. Create indoor training</h4>
+<div class="paragraph">
+<p>I would like to create an indoor training.</p>
+</div>
+<div class="paragraph">
+<p>Once this use case is started, the Plan owner is taken to the training creator, where it is possible to specify all phases this training consists of.</p>
+</div>
+<div class="paragraph">
+<p>Usually the training consist of following phases:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Warm up.</p>
+</li>
+<li>
+<p>Workout.</p>
+</li>
+<li>
+<p>Cool down.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>We consider now only interval trainings, for such the <em>Workout</em> is set of <em>intervals</em>, each, in the simplest case, consisting of <em>Work phase</em> and <em>Rest phase</em>.</p>
+</div>
+<div id="example-example-workout" class="exampleblock">
+<div class="title">Example 1. Simple workout example</div>
+<div class="content">
+<div class="paragraph">
+<p>5x6 min MT, 3 min RBI</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a look at <a href="#example-example-workout">Simple workout example</a>: this is a very simple workout, and a very simple interval scheme.
+Each piece of work is identical which says: use higher resistance on your home trainer and keep cadence low (let&#8217;s say 75&#8201;&#8212;&#8201;85 rpm).
+For rest it will probably make sense just to reduce resistance.</p>
+</div>
+<div id="example-complex-workout" class="exampleblock">
+<div class="title">Example 2. Complex workout example</div>
+<div class="content">
+<div class="paragraph">
+<p>4x8 min OU, 4 min RBI:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3 min at Tempo HR &amp; Power</p>
+</li>
+<li>
+<p>1 min at Steady State HR &amp; Power</p>
+</li>
+<li>
+<p>3 min at Tempo HR &amp; Power</p>
+</li>
+<li>
+<p>1 min at Steady State HR &amp; Power</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>At <a href="#example-complex-workout">Complex workout example</a> we see a training with more complex layout.
+The workout consists of 4 <em>intervals</em> of 8 minutes, but each interval consists of two sub intervals: 3 minutes of higher intensity, 1 minute of slightly lower intensity. Then there are 4 minutes of rest.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_create_training_plan">1.2.7. Create training plan</h4>
+<div class="paragraph">
+<p>I would like to create a new training plan.</p>
+</div>
+<div class="paragraph">
+<p>Each plan can be either public (can be seen and taken by anyone) or private (only Plan owner can select it).
+The training plan consists of \(n\) weeks.
+Each week consists of predefined amount of training days and rest days.
+For each training day there is a training assigned.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 1.0.0-SNAPSHOT<br>
+Last updated 2021-04-19 16:29:18 UTC
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains('stemblock')) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>
