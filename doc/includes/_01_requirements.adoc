@@ -18,8 +18,8 @@ top to bottom direction
 (Upload training data) as UC03
 (Display training) as UC04
 (Withdraw plan) as UC05
+(Create indoor training) as UC12
 (Create training plan) as UC11
-(Create training) as UC12
 
 :Cyclist: --> UC01
 :Cyclist: -left-> UC02
@@ -80,11 +80,29 @@ I would like to stop execution of the plan, that has been previously selected.
 
 A withdrawn plan can be resumed unless another training plan has been started.
 
-=== Create training
+=== Create indoor training
 
-I would like to create a training.
+I would like to create an indoor training.
 
 Once this use case is started, the Plan owner is taken to the training creator, where it is possible to specify all phases this training consists of.
+
+Usually the training consist of following phases:
+
+. Warm up.
+. Workout.
+. Cool down.
+
+We consider now only interval trainings, for such the _Workout_ is set of _intervals_, each, in the simplest case, consisting of _Work phase_ and _Rest phase_.
+
+.Example workout
+====
+5x6 min MT, 3 min RBI
+
+The workout consists of 5 _intervals_: 6 minutes of work and 3 minutes of rest each.
+
+Muscle Tension (MT):: A prolonged interval with higher resistance and lower cadence.
+RBI:: Rest between intervals.
+====
 
 === Create training plan
 
