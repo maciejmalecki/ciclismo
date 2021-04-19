@@ -9,4 +9,6 @@ Maciej Małecki <malecki.maciej@gmail.com>
 
 Manage your cycling training plans, perform, evaluate and adjust in near-realtime.
 
+image::img/ciclismo.jpeg[]
+
 include::includes/_01_requirements.adoc[leveloffset=+1]

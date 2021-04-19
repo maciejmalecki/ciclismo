@@ -6,6 +6,12 @@ tasks {
     "asciidoctor"(org.asciidoctor.gradle.jvm.AsciidoctorTask::class) {
         sourceDir(".")
         baseDirIsProjectDir()
+        resources(delegateClosureOf<CopySpec> {
+            from("img") {
+                include("**/*.jpeg")
+                into("img")
+            }
+        })
     }
 }
 
