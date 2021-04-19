@@ -5,6 +5,7 @@ Maciej Małecki <malecki.maciej@gmail.com>
 :icons: font
 :sectnums:
 :stylesheet: ubuntu.css
+:stem: latexmath
 
 Manage your cycling training plans, perform, evaluate and adjust in near-realtime.
 

@@ -1,9 +1,11 @@
 = Requirements
 
+
 == Actors
 
 Cyclist:: A happy person that likes to sweat.
 Plan Owner:: A person who creates training plans. Training plans can be created for private use or can be published for other cyclists' usage.
+
 
 == User stories
 
@@ -34,13 +36,15 @@ Trainer --> UC11
 Trainer --> UC12
 ....
 
+
 === Training plan selection
 
 I would like to select one of the available training plans.
 
 The plan becomes immediately effective.
-The plan stays selected until its last day, or the cyclist select <<Withdraw plan>> use case.
+The plan stays selected until its last day, or until the cyclist selects <<Withdraw plan>> use case.
 Once last day of the training plan passes, the plan is automatically deselected.
+
 
 === Display training plan
 
@@ -48,6 +52,7 @@ I would like to see the training plan that is currently selected by me.
 
 The plan view should present all trainings categorized into past, current and future trainings.
 It should be possible to download a printable form of the plan (poster).
+
 
 === Display training
 
@@ -67,6 +72,7 @@ It should be possible to specify whether given training has been taken.
 It should be also possible to upload training data (see <<Upload training data>> use case).
 If the _evaluation_ of the taken training is available, it should be shown here as well.
 
+
 === Upload training data
 
 I would like to upload training data gathered by my device so that it can be automatically matched with my training plan, analyzed and evaluated.
@@ -77,11 +83,13 @@ The content of the file is analyzed and compared with training model.
 The system then evaluates and assigns a score for the training.
 The score is shown to the user in <<Display training>> use case.
 
+
 === Withdraw plan
 
 I would like to stop execution of the plan, that has been previously selected.
 
 A withdrawn plan can be resumed unless another training plan has been started.
+
 
 === Create indoor training
 
@@ -127,4 +135,6 @@ The workout consists of 4 _intervals_ of 8 minutes, but each interval consists o
 I would like to create a new training plan.
 
 Each plan can be either public (can be seen and taken by anyone) or private (only Plan owner can select it).
-
+The training plan consists of stem:[n] weeks.
+Each week consists of predefined amount of training days and rest days.
+For each training day there is a training assigned.
