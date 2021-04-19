@@ -15,25 +15,23 @@ skinparam handwritten true
 left to right direction
 :Cyclist:
 :Plan Owner: as Trainer
-(Training plan selection) as UC01
-(Display training plan) as UC02
-(Upload training data) as UC03
-(Display training) as UC04
-(Withdraw plan) as UC05
-(Evaluate training) as UC06
-(Create indoor training) as UC12
-(Create training plan) as UC11
+(Training plan selection) as Select
+(Display training plan) as DisplayPlan
+(Upload training data) as Upload
+(Display training) as DisplayTraining
+(Withdraw plan) as Withdraw
+(Evaluate training) as Evaluate
+(Create indoor training) as CreateIndoorTraining
+(Create training plan) as CreatePlan
 
-:Cyclist: -up-> UC01
-:Cyclist: -up-> UC02
-:Cyclist: --> UC03
-:Cyclist: -> UC04
-:Cyclist: -up-> UC05
-:Cyclist: -> UC06
-UC03 .> UC04 : extends
-UC04 .> UC06: extends
-Trainer --> UC11
-Trainer --> UC12
+:Cyclist: -up-> Select
+:Cyclist: -up-> DisplayPlan
+:Cyclist: -up-> Withdraw
+:Cyclist: --> Upload
+:Cyclist: --> DisplayTraining
+:Cyclist: --> Evaluate
+Trainer --> CreatePlan
+Trainer --> CreateIndoorTraining
 ....
 
 
