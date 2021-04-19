@@ -10,7 +10,7 @@ Plan Owner:: A person who creates training plans. Training plans can be created 
 [plantuml, actors, png]
 ....
 skinparam handwritten true
-left to right direction
+top to bottom direction
 :Cyclist:
 :Plan Owner: as Trainer
 (Training plan selection) as UC01
@@ -19,13 +19,16 @@ left to right direction
 (Display training) as UC04
 (Withdraw plan) as UC05
 (Create training plan) as UC11
+(Create training) as UC12
+
 :Cyclist: --> UC01
-:Cyclist: --> UC02
-:Cyclist: --> UC03
-:Cyclist: --> UC04
+:Cyclist: -left-> UC02
+:Cyclist: -> UC03
+:Cyclist: -up-> UC04
 :Cyclist: --> UC05
 UC03 .> UC04 : extends
 Trainer --> UC11
+Trainer --> UC12
 ....
 
 === Training plan selection
@@ -40,7 +43,8 @@ Once last day of the training plan passes, the plan is automatically deselected.
 
 I would like to see the training plan that is currently selected by me.
 
-I would like to see all trainings in the plan categorized into past, current and future trainings.
+The plan view should present all trainings categorized into past, current and future trainings.
+It should be possible to download a printable form of the plan (poster).
 
 === Display training
 
@@ -50,7 +54,11 @@ The most important information regarding the training is its construction, i.e.:
 
 * overall length,
 * some additional characteristics such as intensity, difficulty, description,
-* specification of all training compounds: intervals, RBIs including length and requirements (expected power, HR, cadence, etc).
+* specification of all training compounds:
+** intervals,
+** RBIs,
+** duration of each phase,
+** additional requirements regarding each phase (such as expected power, HR, cadence, etc).
 
 It should be possible to specify whether given training has been taken.
 It should be also possible to upload training data (see <<Upload training data>> use case).
@@ -70,6 +78,17 @@ The score is shown to the user in <<Display training>> use case.
 
 I would like to stop execution of the plan, that has been previously selected.
 
+A withdrawn plan can be resumed unless another training plan has been started.
+
+=== Create training
+
+I would like to create a training.
+
+Once this use case is started, the Plan owner is taken to the training creator, where it is possible to specify all phases this training consists of.
+
 === Create training plan
 
-I would like to create a new training plan for given discipline, skill level and volume.
+I would like to create a new training plan.
+
+Each plan can be either public (can be seen and taken by anyone) or private (only Plan owner can select it).
+
